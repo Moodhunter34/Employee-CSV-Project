@@ -2,6 +2,7 @@ import java.util.Date;
 
 public class Employee {
     private Integer employeeId;
+    private String prefix;
     private String firstName;
     private Character middleInitial;
     private String lastName;
@@ -12,11 +13,12 @@ public class Employee {
     private Integer salary;
     private String[] rawData;
 
-    public Employee(Integer employeeId, String firstName,
+    public Employee(Integer employeeId,String prefix, String firstName,
                     Character middleInitial, String lastName,
                     Character gender, String email, Date dateOfBirth,
                     Date dateOfJoining, Integer salary, String[] rawData) {
         this.employeeId = employeeId;
+        this.prefix = prefix;
         this.firstName = firstName;
         this.middleInitial = middleInitial;
         this.lastName = lastName;
@@ -31,6 +33,8 @@ public class Employee {
     public Integer getEmployeeId() {
         return employeeId;
     }
+
+    public String getPrefix(){ return prefix;}
 
     public String getFirstName() {
         return firstName;
@@ -72,6 +76,7 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "employeeId=" + employeeId +
+                ", Prefix=" + prefix +
                 ", firstName='" + firstName + '\'' +
                 ", middleInitial=" + middleInitial +
                 ", lastName='" + lastName + '\'' +
