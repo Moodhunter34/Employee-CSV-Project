@@ -8,11 +8,13 @@ public class StoreEmployees {
 
     public void csvToListOfEmployees() throws IOException {
         List<String[]> csvContent = CSVToEmployeeArrayList.readData(FILE_NAME);
-        for (int i = 0; i < csvContent.size(); i++) {
-            for (int j = 0; j < csvContent.get(i).length; j++) {
+        for (int i = 1; i < csvContent.size(); i++) {
+            boolean invalidEmployeeId;
+            boolean invalid
+            String[] currentRow = csvContent.get(i);
 
             }
 
         }
     }
-}
+
