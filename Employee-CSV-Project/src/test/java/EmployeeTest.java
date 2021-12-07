@@ -44,7 +44,7 @@ class EmployeeTest {
     @DisplayName("Valid Name")
     public void isItAValidName () {
 
-        String inputName = "steven";
+        String inputName = "Steven";
         assertTrue(Validation.validateName(inputName));
     }
 
