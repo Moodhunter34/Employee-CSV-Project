@@ -7,28 +7,25 @@ public class Employee {
     private String lastName;
     private Character gender;
     private String email;
-    private Date dateOfBirt;
+    private Date dateOfBirth;
     private Date dateOfJoining;
     private Integer salary;
     private String[] rawData;
-    
-    public Employee(String[] rawData){
-        this.rawData =rawData;
-    }
 
     public Employee(Integer employeeId, String firstName,
                     Character middleInitial, String lastName,
                     Character gender, String email, Date dateOfBirt,
-                    Date dateOfJoining, Integer salary) {
+                    Date dateOfJoining, Integer salary, String[] rawData) {
         this.employeeId = employeeId;
         this.firstName = firstName;
         this.middleInitial = middleInitial;
         this.lastName = lastName;
         this.gender = gender;
         this.email = email;
-        this.dateOfBirt = dateOfBirt;
+        this.dateOfBirth = dateOfBirt;
         this.dateOfJoining = dateOfJoining;
         this.salary = salary;
+        this.rawData = rawData;
     }
 
     public Integer getEmployeeId() {
@@ -55,8 +52,8 @@ public class Employee {
         return email;
     }
 
-    public Date getDateOfBirt() {
-        return dateOfBirt;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
     public Date getDateOfJoining() {
@@ -80,7 +77,7 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", gender=" + gender +
                 ", email='" + email + '\'' +
-                ", dateOfBirt=" + dateOfBirt +
+                ", dateOfBirt=" + dateOfBirth +
                 ", dateOfJoining=" + dateOfJoining +
                 ", salary='" + salary + '\'' +
                 '}';
