@@ -1,15 +1,72 @@
 import java.util.Date;
 
 public class Employee {
-    public Integer employeeId;
-    public String firstName;
-    public Character middleInitial;
-    public String lastName;
-    public Character gender;
-    public String email;
-    public Date dateOfBirt;
-    public Date dateOfJoining;
-    public String salary;
+    private Integer employeeId;
+    private String firstName;
+    private Character middleInitial;
+    private String lastName;
+    private Character gender;
+    private String email;
+    private Date dateOfBirth;
+    private Date dateOfJoining;
+    private Integer salary;
+    private String[] rawData;
+
+    public Employee(Integer employeeId, String firstName,
+                    Character middleInitial, String lastName,
+                    Character gender, String email, Date dateOfBirt,
+                    Date dateOfJoining, Integer salary, String[] rawData) {
+        this.employeeId = employeeId;
+        this.firstName = firstName;
+        this.middleInitial = middleInitial;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.email = email;
+        this.dateOfBirth = dateOfBirt;
+        this.dateOfJoining = dateOfJoining;
+        this.salary = salary;
+        this.rawData = rawData;
+    }
+
+    public Integer getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public Character getMiddleInitial() {
+        return middleInitial;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Character getGender() {
+        return gender;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public Date getDateOfJoining() {
+        return dateOfJoining;
+    }
+
+    public Integer getSalary() {
+        return salary;
+    }
+
+    public String[] getRawData() {
+        return rawData;
+    }
 
     @Override
     public String toString() {
@@ -20,7 +77,7 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", gender=" + gender +
                 ", email='" + email + '\'' +
-                ", dateOfBirt=" + dateOfBirt +
+                ", dateOfBirt=" + dateOfBirth +
                 ", dateOfJoining=" + dateOfJoining +
                 ", salary='" + salary + '\'' +
                 '}';
