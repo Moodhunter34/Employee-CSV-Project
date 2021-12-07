@@ -45,7 +45,7 @@
       <recent name="C:\Users\ariso\Documents\GitHub\Employee-CSV-Project" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EmployeeTest.validateEmloyeeTest">
+  <component name="RunManager" selected="JUnit.EmployeeTest">
     <configuration name="EmployeeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Employee-CSV-Project" />
       <option name="PACKAGE_NAME" value="" />
@@ -97,9 +97,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EmployeeTest" />
         <item itemvalue="JUnit.EmployeeTest.validateEmloyeeTest" />
         <item itemvalue="JUnit.EmployeeTest.isDateCorrectlyFormated" />
-        <item itemvalue="JUnit.EmployeeTest" />
         <item itemvalue="JUnit.EmployeeTest.genderAndInitialFormat" />
         <item itemvalue="JUnit.EmployeeTest.salaryIsAnInteger" />
       </list>

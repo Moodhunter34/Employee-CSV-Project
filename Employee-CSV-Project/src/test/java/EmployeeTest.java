@@ -40,14 +40,14 @@ class EmployeeTest {
         assertTrue(Validation.validateEmail(inputEmail));
     }
 
-    @Test
-    @DisplayName("Valida employee to not be null")
-    public void validateEmloyeeTest() {
-        Employee employee = new Employee(231, "Kevin",
-                'M', "Durant", 'M', "kevdurant@gmail.com",
-                "10/12/10", "11/10/2013",
-                750000, null);
-    }
+//    @Test
+//    @DisplayName("Valida employee to not be null")
+//    public void validateEmloyeeTest() {
+//        Employee employee = new Employee(231, "Kevin",
+//                'M', "Durant", 'M', "kevdurant@gmail.com",
+//                "10/12/10", "11/10/2013",
+//                750000, null);
+//    }
 
     public void id() {
 
