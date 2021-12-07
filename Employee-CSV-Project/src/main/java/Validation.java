@@ -11,7 +11,7 @@ public class Validation {
         return (employee.getRawData() == null);
     }
     public static boolean validateName(String name){
-        return Pattern.compile("/^[a-z ,.'-]+$/i").matcher(name).matches();
+        return Pattern.compile("^[a-z ,.'-]+$",Pattern.CASE_INSENSITIVE).matcher(name).matches();
     }
     public static boolean validateChar(String character){
         if (character.length() > 1){

@@ -7,7 +7,7 @@ import java.util.List;
 
 
 public class CSVToEmployeeArrayList {
-    public List<String[]> readData(String fileName) throws IOException {
+    public static List<String[]> readData(String fileName) throws IOException {
         List<String[]> output = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
             String line = "";
@@ -15,7 +15,7 @@ public class CSVToEmployeeArrayList {
                 output.add(line.split(","));
             }
         } catch (FileNotFoundException e) {
-            //Some error logging
+            System.out.println("Help");
         }
         return output;
     }
