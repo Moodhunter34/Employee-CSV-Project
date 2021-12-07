@@ -55,14 +55,10 @@ class EmployeeTest {
 
     @Test
     @DisplayName("Valid Name")
-<<<<<<< HEAD
-    public void isItAValidName () {
 
-        String inputName = "Steven";
-=======
     public void isItAValidName() {
         String inputName = "steven";
->>>>>>> dev
+
         assertTrue(Validation.validateName(inputName));
     }
 
