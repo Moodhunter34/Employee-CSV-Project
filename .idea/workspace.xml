@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="912eccdb-7afd-4e90-a25d-450e89a0b9eb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Employee-CSV-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Employee-CSV-Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Employee-CSV-Project/src/test/java/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Employee-CSV-Project/src/test/java/EmployeeTest.java" afterDir="false" />
     </list>
@@ -38,6 +36,34 @@
       <recent name="C:\Users\ariso\Documents\GitHub\Employee-CSV-Project" />
     </key>
   </component>
+  <component name="RunManager" selected="JUnit.EmployeeTest.isItAValidName">
+    <configuration name="EmployeeTest.isItAValidName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Employee-CSV-Project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
+      <option name="METHOD_NAME" value="isItAValidName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeTest.testRegex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Employee-CSV-Project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
+      <option name="METHOD_NAME" value="testRegex" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.EmployeeTest.isItAValidName" />
+        <item itemvalue="JUnit.EmployeeTest.testRegex" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -47,7 +73,8 @@
       <option name="presentableId" value="Default" />
       <updated>1638806316760</updated>
       <workItem from="1638806319266" duration="199000" />
-      <workItem from="1638808252587" duration="10532000" />
+      <workItem from="1638808252587" duration="11137000" />
+      <workItem from="1638889300086" duration="1024000" />
     </task>
     <servers />
   </component>
