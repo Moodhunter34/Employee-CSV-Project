@@ -15,7 +15,7 @@ public class CSVToEmployeeArrayList {
                 output.add(line.split(","));
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Help");
+            System.out.println("File not Found.");
         }
         return output;
     }
