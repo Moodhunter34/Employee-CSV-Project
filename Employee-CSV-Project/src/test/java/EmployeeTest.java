@@ -1,18 +1,25 @@
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 class EmployeeTest {
+
+
     @BeforeEach
     void setup() {
         ArrayList<Employee> employee = new ArrayList<>();
+
     }
 
     @Test
-    public void testReadFile () {
+    public void testReadFile() {
 
     }
 
@@ -28,45 +35,61 @@ class EmployeeTest {
 
     @Test
     @DisplayName("Test Email Address")
-    public void testRegex () {
-
+    public void testRegex() {
         String inputEmail = "TYeh@spartaglobal.com";
-
         assertTrue(Validation.validateEmail(inputEmail));
-
     }
 
-    public void id (){
+    @Test
+    @DisplayName("Valida employee to not be null")
+    public void validateEmloyeeTest() {
+        Employee employee = new Employee(231, "Kevin",
+                'M', "Durant", 'M', "kevdurant@gmail.com",
+                "10/12/10", "11/10/2013",
+                750000, null);
+    }
+
+    public void id() {
 
     }
 
     @Test
     @DisplayName("Valid Name")
-    public void isItAValidName () {
-
+    public void isItAValidName() {
         String inputName = "steven";
         assertTrue(Validation.validateName(inputName));
     }
 
     @Test
     @DisplayName("Salary is an Integer")
-    public void salaryIsAnInteger () {
-
+    public void salaryIsAnInteger() {
+        String salary = "30000";
+        assertTrue(Validation.validateInteger(salary));
     }
+
+
     @Test
     @DisplayName("Valid Gender or Initial")
-    public void genderAndInitialFormat () {
+    public void genderAndInitialFormat() {
+        String validChar = "G";
+        assertTrue(Validation.validateChar(validChar));
 
     }
 
-//    @Test
-//    @DisplayName("Date format is correct")
-//    public void isDateCorrectlyFormated() {
-//        String inputDate = "05/08/1967";
-//        String regexPattern = "/^[a-z ,.'-]+$/i";
-//
-//        assertTrue(Validation.validateEmail(inputName, regexPattern));
-//    }
+
+    @Test
+    @DisplayName("Date format is correct")
+    public void isDateCorrectlyFormated() {
+        String inputDate = "05/08/1967";
+        String regexPattern = "/^[a-z ,.'-]+$/i";
+        assertTrue(Validation.validateDate(inputDate), regexPattern);
+    }
+
+    @AfterEach
+    public void teardown() {
+        System.out.println("After class");
+    }
+
 
     /*
     Test for any corrupted data
