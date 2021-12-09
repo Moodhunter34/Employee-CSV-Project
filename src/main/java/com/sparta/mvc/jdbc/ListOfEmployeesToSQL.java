@@ -19,8 +19,9 @@ public class ListOfEmployeesToSQL {
             e.printStackTrace();
         }
         try{
-            createNewEmployee(1, "Mr.", "Kabib", 'E', "Nurmagomedov",
+            createNewEmployee(2, "Mr.", "Kabib", 'E', "Nurmagomedov",
                     'M', "kabibnur@gmail.com", dob, doj, 70000);
+            deleteEmployee(2);
         } catch (SQLException | IOException e){
             e.printStackTrace();
         } finally {
