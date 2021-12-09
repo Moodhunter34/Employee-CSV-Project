@@ -1,10 +1,18 @@
+import com.sparta.mvc.model.Employee;
+import com.sparta.mvc.model.Validation;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
+import static org.junit.Assert.assertTrue;
+import java.util.Date;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,39 +26,12 @@ class EmployeeTest {
 
     }
 
-    @Test
-    public void testReadFile() {
-
-    }
-
-//    @Test
-//    @DisplayName("Check if the Employee data match")
-//    public void testEmployeeMatch(){
-//
-//        ArrayList<Employee> expectedCustomerOutput;
-//        ArrayList<Employee> actualCustomerOutput;
-//
-//        assertEquals(expectedCustomerOutput, actualCustomerOutput);
-//    }
 
     @Test
     @DisplayName("Test Email Address")
     public void testRegex() {
         String inputEmail = "TYeh@spartaglobal.com";
         assertTrue(Validation.validateEmail(inputEmail));
-    }
-
-//    @Test
-//    @DisplayName("Valida employee to not be null")
-//    public void validateEmloyeeTest() {
-//        Employee employee = new Employee(231, "Kevin",
-//                'M', "Durant", 'M', "kevdurant@gmail.com",
-//                "10/12/10", "11/10/2013",
-//                750000, null);
-//    }
-
-    public void id() {
-
     }
 
     @Test
@@ -79,13 +60,6 @@ class EmployeeTest {
     }
 
 
-    @Test
-    @DisplayName("Date format is correct")
-    public void isDateCorrectlyFormated() {
-        String inputDate = "05/08/1967";
-        String regexPattern = "/^[a-z ,.'-]+$/i";
-        assertTrue(Validation.validateDate(inputDate), regexPattern);
-    }
 
     @AfterEach
     public void teardown() {
@@ -106,6 +80,4 @@ class EmployeeTest {
 
 
      */
-
-
 }
