@@ -1,3 +1,5 @@
+package java;
+
 import com.sparta.mvc.model.Employee;
 import com.sparta.mvc.model.Validation;
 import org.junit.jupiter.api.AfterEach;
@@ -11,7 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import static org.junit.Assert.assertTrue;
 import java.util.Date;
 import java.util.ArrayList;
 
@@ -59,8 +60,6 @@ class EmployeeTest {
 
     }
 
-
-
     @AfterEach
     public void teardown() {
         System.out.println("After class");
@@ -75,9 +74,5 @@ class EmployeeTest {
     Report on how many data are in each of the categories
 
     Does the file that I am reading exits?
-
-
-
-
      */
 }
