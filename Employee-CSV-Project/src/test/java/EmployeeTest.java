@@ -1,30 +1,34 @@
+import com.sparta.mvc.jdbc.ConnectionFactory;
+import com.sparta.mvc.jdbc.StatementFactory;
 import com.sparta.mvc.model.Employee;
 import com.sparta.mvc.model.Validation;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
 
-import java.util.Date;
-import java.util.ArrayList;
-
+import static com.sparta.mvc.jdbc.StatementFactory.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-class EmployeeTest {
+import static com.sparta.mvc.jdbc.ConnectionFactory.getConnection;
+import static com.sparta.mvc.jdbc.ConnectionFactory.closeConnection;
 
+class EmployeeTest {
 
     @BeforeEach
     void setup() {
         ArrayList<Employee> employee = new ArrayList<>();
 
     }
-
 
     @Test
     @DisplayName("Test Email Address")
@@ -47,7 +51,6 @@ class EmployeeTest {
         assertTrue(Validation.validateInteger(salary));
     }
 
-
     @Test
     @DisplayName("Valid Gender or Initial")
     public void genderAndInitialFormat() {
@@ -56,13 +59,88 @@ class EmployeeTest {
 
     }
 
+    @Test
+    public void testOpenConnection() throws Exception {
+        System.out.println("openConnection");
+        Connection result = ConnectionFactory.getConnection();
+        assertEquals(result != null, true);
+    }
+
+    @ParameterizedTest
+    @CsvSource({"Justin, Man, Justin Man"})
+    public void testInsertData (String firstName, String lastName, String execpted) throws Exception {
+
+        System.out.println("insertActor");
+        String insertActor ="INSERT INTO employees (ID, prefix, firstName, middleInitial, lastName, gender, email, dateOfBirth, dateOfJoining, Salary)" +
+                " VALUES (3, Mr, Anthony, T, Yeh, M, antony.yeh@hotmail.com , 06/09/2000, 08/11/21, 23000)";
+        try {
+            getConnection();
+            ResultSet rs = getInsertStatement().executeQuery(insertActor);
+            firstName = rs.getString("First Name");
+            lastName = rs.getString("Last Name");
+            assertEquals(execpted, firstName + lastName);
+            closeConnection();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void insertData () {
+
+        System.out.println("insertActor");
+        String insertActor = "INSERT INTO employees (ID, prefix, firstName, middleInitial, lastName, gender, email, dateOfBirth, dateOfJoining, Salary)" +
+                " VALUES (3, Mr, Anthony, T, Yeh, M, antony.yeh@hotmail.com , 06/09/2000, 08/11/21, 23000)";
+        try {
+            getConnection();
+            PreparedStatement ps = getInsertStatement();
+            ps.setInt(1,3);
+            getInsertStatement().executeUpdate();
+            getSelectStatement().setInt(1,3);
+            ResultSet rs = getSelectStatement().executeQuery();
+            rs.next();
+            int ID = rs.getInt("ID");
+            String prefix = rs.getString("Mr");
+            String firstName = rs.getString("firstName");
+            String middleInitial = rs.getString("middleInitial");
+            String lastName = rs.getString("lastName");
+            String gender = rs.getString("geneder");
+            String email = rs.getString("email");
+            Date dateOfBirth = rs.getDate("dateOfBirth");
+            Date dateOfJoining = rs.getDate("dateOfJoining");
+            int salary = rs.getInt("salary");
+            assertEquals(3,ID);
+            assertEquals("Mr", prefix);
+            assertEquals("Anthony", firstName);
+            assertEquals("T", middleInitial);
+            assertEquals("Yeh", lastName);
+            assertEquals("M", gender);
+            assertEquals("antony.yeh@hotmail.com", email);
+            assertEquals("06/09/2000", dateOfBirth);
+            assertEquals("08/11/21", dateOfJoining);
+            assertEquals("23000", salary);
+            closeConnection();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void insert(){
+        System.out.println("First insert");
+    }
+
+    @Test
+    public void update () {
+        System.out.println("update");
+    }
 
 
     @AfterEach
     public void teardown() {
         System.out.println("After class");
     }
-
 
     /*
     Test for any corrupted data
@@ -72,9 +150,5 @@ class EmployeeTest {
     Report on how many data are in each of the categories
 
     Does the file that I am reading exits?
-
-
-
-
      */
 }
