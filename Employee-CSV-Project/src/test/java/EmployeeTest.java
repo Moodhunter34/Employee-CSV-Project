@@ -90,25 +90,43 @@ class EmployeeTest {
     public void insertData () {
 
         System.out.println("insertActor");
-        String insertActor = "INSERT INTO employees (ID, prefix, firstName, middleInitial, lastName, gender, email, dateOfBirth, dateOfJoining, Salary)" +
-                " VALUES (3, Mr, Anthony, T, Yeh, M, antony.yeh@hotmail.com , 06/09/2000, 08/11/21, 23000)";
+//        String insertActor = "INSERT INTO employees (ID, prefix, firstName, middleInitial, lastName, gender, email, dateOfBirth, dateOfJoining, Salary)" +
+//                " VALUES (3, Mr, Anthony, T, Yeh, M, antony.yeh@hotmail.com , 06/09/2000, 08/11/21, 23000)";
         try {
             getConnection();
             PreparedStatement ps = getInsertStatement();
             ps.setInt(1,3);
-            getInsertStatement().executeUpdate();
+            ps.setString(2,"Mr");
+            ps.setString(3,"Anthony");
+            ps.setString(4,"T");
+            ps.setString(5,"Yeh");
+            ps.setString(6,"M");
+            ps.setString(7,"antony.yeh@hotmail.com");
+            ps.setString(8,"06/09/2000");
+            ps.setString(9,"08/11/21");
+            ps.setInt(10,23000);
+            ps.executeUpdate();
             getSelectStatement().setInt(1,3);
+            getSelectStatement().setString(2,"Mr");
+            getSelectStatement().setString(3,"Anthony");
+            getSelectStatement().setString(4,"T");
+            getSelectStatement().setString(5,"Yeh");
+            getSelectStatement().setString(7,"M");
+            getSelectStatement().setString(8,"antony.yeh@hotmail.com");
+            getSelectStatement().setString(9,"06/09/2000");
+            getSelectStatement().setString(0,"08/11/2021");
+            getSelectStatement().setInt(10,23000);
             ResultSet rs = getSelectStatement().executeQuery();
             rs.next();
-            int ID = rs.getInt("ID");
+            int ID = rs.getInt("employeeID");
             String prefix = rs.getString("Mr");
             String firstName = rs.getString("firstName");
             String middleInitial = rs.getString("middleInitial");
             String lastName = rs.getString("lastName");
             String gender = rs.getString("geneder");
             String email = rs.getString("email");
-            Date dateOfBirth = rs.getDate("dateOfBirth");
-            Date dateOfJoining = rs.getDate("dateOfJoining");
+            Date dateOfBirth = rs.getDate("06/09/2000");
+            Date dateOfJoining = rs.getDate("08/11/2021");
             int salary = rs.getInt("salary");
             assertEquals(3,ID);
             assertEquals("Mr", prefix);
@@ -118,7 +136,7 @@ class EmployeeTest {
             assertEquals("M", gender);
             assertEquals("antony.yeh@hotmail.com", email);
             assertEquals("06/09/2000", dateOfBirth);
-            assertEquals("08/11/21", dateOfJoining);
+            assertEquals("08/11/2021", dateOfJoining);
             assertEquals("23000", salary);
             closeConnection();
         } catch (Exception e) {
