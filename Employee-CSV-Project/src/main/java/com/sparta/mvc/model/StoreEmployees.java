@@ -1,3 +1,5 @@
+package com.sparta.mvc.model;
+
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -7,7 +9,7 @@ import java.util.*;
 public class StoreEmployees {
     public List<Employee> validEmployeeEntries = new ArrayList<>();
     public List<Employee> invalidEmployeeEntries = new ArrayList<>();
-    private final String FILE_NAME = "C:\\Users\\ariso\\Documents\\GitHub\\Employee-CSV-Project\\Employee-CSV-Project\\EmployeeRecords.csv";
+    private final String FILE_NAME = "C:\\Users\\ariso\\Documents\\GitHub\\com.sparta.mvc.model.Employee-CSV-Project\\com.sparta.mvc.model.Employee-CSV-Project\\EmployeeRecords.csv";
 
 
     private Employee createEmployee(String[] employeeRow) throws ParseException {
