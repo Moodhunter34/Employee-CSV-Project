@@ -1,3 +1,5 @@
+package com.sparta.mvc.model;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -15,7 +17,7 @@ public class CSVToEmployeeArrayList {
                 output.add(line.split(","));
             }
         } catch (FileNotFoundException e) {
-            System.out.println("Help");
+            System.out.println("File not Found.");
         }
         return output;
     }
