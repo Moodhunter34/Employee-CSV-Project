@@ -1,31 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="912eccdb-7afd-4e90-a25d-450e89a0b9eb" name="Changes" comment="" />
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
+    <list default="true" id="912eccdb-7afd-4e90-a25d-450e89a0b9eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Employee-CSV-Project/src/main/java/com/sparta/mvc/jdbc/ListOfEmployeesToSQL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Employee-CSV-Project/src/main/java/com/sparta/mvc/model/Validation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Employee-CSV-Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Employee-CSV-Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employee-CSV-Project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employee-CSV-Project/src/main/java/CSVToEmployeeArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/Employee-CSV-Project/src/main/java/com/sparta/mvc/model/CSVToEmployeeArrayList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employee-CSV-Project/src/main/java/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/Employee-CSV-Project/src/main/java/com/sparta/mvc/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employee-CSV-Project/src/main/java/StoreEmployees.java" beforeDir="false" afterPath="$PROJECT_DIR$/Employee-CSV-Project/src/main/java/com/sparta/mvc/model/StoreEmployees.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Employee-CSV-Project/src/test/java/EmployeeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Employee-CSV-Project/src/test/java/EmployeeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
+    <list id="67f882c3-6d77-42f4-b836-ee9a40ef1336" name="Changes by Ishmael" comment="">
+      <change beforePath="$PROJECT_DIR$/Employee-CSV-Project/src/main/java/Validation.java" beforeDir="false" />
+    </list>
+    <list id="51c81c31-0fb4-4892-9581-3b94f71dd78d" name="Changes by MagerXser" comment="" />
+    <list id="627c8224-e997-4218-9493-40a77251df3e" name="Changes by nikos" comment="" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  <component name="RunManager" selected="Application.ListOfEmployeesToSQL">
+    <configuration name="ConnectionFactory" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sparta.mvc.jdbc.ConnectionFactory" />
+      <module name="Employee-CSV-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.mvc.jdbc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ListOfEmployeesToSQL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sparta.mvc.jdbc.ListOfEmployeesToSQL" />
+      <module name="Employee-CSV-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.mvc.jdbc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Runner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.sparta.mvc.jdbc.Runner" />
+      <module name="Employee-CSV-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sparta.mvc.jdbc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Employee-CSV-Project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EmployeeTest.validateEmloyeeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Employee-CSV-Project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EmployeeTest" />
+      <option name="METHOD_NAME" value="validateEmloyeeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ListOfEmployeesToSQL" />
+        <item itemvalue="Application.ConnectionFactory" />
+        <item itemvalue="Application.Runner" />
+        <item itemvalue="JUnit.EmployeeTest" />
+        <item itemvalue="JUnit.EmployeeTest.validateEmloyeeTest" />
+      </list>
+    </recent_temporary>
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="21v0Zzks9Kze7jIBCGp7HAff2wE" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ariso\Documents\GitHub\Employee-CSV-Project" />
-    </key>
-  </component>
+>>>>>>> Stashed changes
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
