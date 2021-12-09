@@ -17,7 +17,7 @@ public class Employee {
 
     public Employee(Integer employeeId,String prefix, String firstName,
                     Character middleInitial, String lastName,
-                    Character gender, String email, Date dateOfBirt,
+                    Character gender, String email, Date dateOfBirth,
                     Date dateOfJoining, Integer salary, String[] rawData) {
         this.employeeId = employeeId;
         this.prefix = prefix;
@@ -26,7 +26,7 @@ public class Employee {
         this.lastName = lastName;
         this.gender = gender;
         this.email = email;
-        this.dateOfBirth = dateOfBirt;
+        this.dateOfBirth = dateOfBirth;
         this.dateOfJoining = dateOfJoining;
         this.salary = salary;
         this.rawData = rawData;

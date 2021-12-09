@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import java.util.Date;
 
 import static org.junit.Assert.assertTrue;
+import java.util.Date;
+import java.util.ArrayList;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class EmployeeTest {
 
@@ -22,20 +26,6 @@ class EmployeeTest {
 
     }
 
-    @Test
-    public void testReadFile() {
-
-    }
-
-//    @Test
-//    @DisplayName("Check if the com.sparta.mvc.model.Employee data match")
-//    public void testEmployeeMatch(){
-//
-//        ArrayList<com.sparta.mvc.model.Employee> expectedCustomerOutput;
-//        ArrayList<com.sparta.mvc.model.Employee> actualCustomerOutput;
-//
-//        assertEquals(expectedCustomerOutput, actualCustomerOutput);
-//    }
 
     @Test
     @DisplayName("Test Email Address")
@@ -43,25 +33,6 @@ class EmployeeTest {
         String inputEmail = "TYeh@spartaglobal.com";
         assertTrue(Validation.validateEmail(inputEmail));
     }
-/*
-    @Test
-    @DisplayName("Valid employee to not be null")
-    public void testValidEmployee(){
-    DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-    try{
-        Date dateOfBirth = df.parse("10/12/10");
-        Date dateOfJoining = df.parse("11/10/2013");
-    }catch(ParseException e){
-        e.getMessage();
-    }
-        Employee employee = new Employee(231, "Mr." , "Kevin",
-                'M', "Durant", 'M', "kevdurant@gmail.com",
-                dateOfBirth, dateOfJoining,
-                750000, null);
-        Validation.validateEmployee(employee);
-    }
-*/
-    //public void id() {}
 
     @Test
     @DisplayName("Valid Name")
@@ -87,12 +58,6 @@ class EmployeeTest {
     }
 
 
-    @Test
-    @DisplayName("Date format is correct")
-    public void isDateCorrectlyFormated() {
-        String inputDate = "05/08/1967";
-        assertTrue(Validation.validateDate(inputDate));
-    }
 
     @AfterEach
     public void teardown() {
@@ -113,6 +78,4 @@ class EmployeeTest {
 
 
      */
-
-    
 }
