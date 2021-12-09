@@ -1,5 +1,3 @@
-package java;
-
 import com.sparta.mvc.model.Employee;
 import com.sparta.mvc.model.Validation;
 import org.junit.jupiter.api.AfterEach;
@@ -37,10 +35,8 @@ class EmployeeTest {
 
     @Test
     @DisplayName("Valid Name")
-
     public void isItAValidName() {
         String inputName = "steven";
-
         assertTrue(Validation.validateName(inputName));
     }
 
@@ -60,6 +56,8 @@ class EmployeeTest {
 
     }
 
+
+
     @AfterEach
     public void teardown() {
         System.out.println("After class");
@@ -74,5 +72,9 @@ class EmployeeTest {
     Report on how many data are in each of the categories
 
     Does the file that I am reading exits?
+
+
+
+
      */
 }
