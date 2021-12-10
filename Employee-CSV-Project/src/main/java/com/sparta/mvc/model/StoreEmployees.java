@@ -12,7 +12,7 @@ public class StoreEmployees {
     private final String FILE_NAME = "C:\\Users\\ariso\\Documents\\GitHub\\com.sparta.mvc.model.Employee-CSV-Project\\com.sparta.mvc.model.Employee-CSV-Project\\EmployeeRecords.csv";
 
 
-    private Employee createEmployee(String[] employeeRow) throws ParseException {
+    public static Employee createEmployee(String[] employeeRow) throws ParseException {
         boolean invalidEmployee = false;
         Integer currentEmployeeId;
         String currentPrefix;
@@ -68,14 +68,14 @@ public class StoreEmployees {
             currentEmail = null;
             invalidEmployee = true;
         }
-        if (Validation.validateDate(employeeRow[7])) {
+        if (employeeRow[7] != null && Validation.validateDate(employeeRow[7])) {
             DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
             currentDateOfBirth = df.parse(employeeRow[7]);
         } else {
             currentDateOfBirth = null;
             invalidEmployee = true;
         }
-        if (Validation.validateDate(employeeRow[8])) {
+        if (employeeRow[7] != null && Validation.validateDate(employeeRow[8])) {
             DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
             currentDateOfJoining = df.parse(employeeRow[8]);
         } else {

@@ -57,12 +57,6 @@ public class ListOfEmployeesToSQL {
         System.out.println("Rows affected: " + rowsAffected);
     }
 
-    private static void selectEmployee(String columnName, Integer ID){
-
-    }
-    private static void selectEmployeeFirstName(Integer ID){
-
-    }
 }
 
 
