@@ -30,6 +30,12 @@ public class StatementFactory {
         if(deleteStatement != null) deleteStatement.close();
     }
 
+    public static PreparedStatement dropTable() throws SQLException, IOException {
+        return ConnectionFactory.getConnection()
+                .prepareStatement(
+                        "TRUNCATE TABLE employees");
+    }
+
     //Select
     public static PreparedStatement getSelectStatement(String columnName) throws SQLException, IOException {
         switch (columnName){

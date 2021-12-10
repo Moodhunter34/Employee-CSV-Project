@@ -32,7 +32,7 @@ public class DataAccess {
     }
 
 
-    private static void deleteEmployee(Integer employeeID) throws SQLException, IOException{
+    public static void deleteEmployee(Integer employeeID) throws SQLException, IOException{
         PreparedStatement statement = StatementFactory.getDeleteStatement();
         statement.setInt(1, employeeID);
         int rowsAffected = statement.executeUpdate();
@@ -44,6 +44,11 @@ public class DataAccess {
     }
     private static void selectEmployeeFirstName(Integer ID){
 
+    }
+
+    public static void clearTable() throws SQLException, IOException {
+        PreparedStatement statement = StatementFactory.dropTable();
+        statement.executeUpdate();
     }
 }
 

@@ -43,6 +43,7 @@ public class Request {
         List<Employee> results = format(resultSet);
         return results;
     }
+
     public static List<Employee> readFirstName(String value) throws SQLException, IOException, ParseException {
         PreparedStatement statement = StatementFactory.getSelectStatement("firstName");
         statement.setString(1, value);
