@@ -4,6 +4,7 @@ import java.sql.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import com.sparta.mvc.jdbc.StatementFactory;
 import com.sparta.mvc.model.Employee;
@@ -31,20 +32,6 @@ public class DataAccess {
         statement.execute();
     }
 
-
-    private static void deleteEmployee(Integer employeeID) throws SQLException, IOException{
-        PreparedStatement statement = StatementFactory.getDeleteStatement();
-        statement.setInt(1, employeeID);
-        int rowsAffected = statement.executeUpdate();
-        System.out.println("Rows affected: " + rowsAffected);
-    }
-
-    private static void selectEmployee(String columnName, Integer ID){
-
-    }
-    private static void selectEmployeeFirstName(Integer ID){
-
-    }
 }
 
 
