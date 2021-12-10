@@ -18,15 +18,6 @@ public class StatementFactory {
         }
         return insertStatement;
     }
-    public static PreparedStatement getSelectStatement() throws SQLException, IOException {
-        if(insertStatement == null){
-            insertStatement = ConnectionFactory.getConnection()
-                    .prepareStatement(
-                            "SELECT * FROM employees WHERE ? = ?");
-        }
-        return insertStatement;
-    }
-
     public static PreparedStatement getDeleteStatement() throws SQLException, IOException {
         if(deleteStatement == null){
             deleteStatement = ConnectionFactory.getConnection()
@@ -39,6 +30,51 @@ public class StatementFactory {
         if(deleteStatement != null) deleteStatement.close();
     }
 
+    //Select
+    public static PreparedStatement getSelectStatement(String columnName) throws SQLException, IOException {
+        switch (columnName){
+            case "employeeID":
+                return ConnectionFactory.getConnection()
+                        .prepareStatement(
+                                "SELECT * FROM employees WHERE employeeID = ?");
+            case "prefix" :
+                return ConnectionFactory.getConnection()
+                        .prepareStatement(
+                                "SELECT * FROM employees WHERE prefix = ?");
+            case "firstName":
+                return ConnectionFactory.getConnection()
+                        .prepareStatement(
+                                "SELECT * FROM employees WHERE firstName = ?");
+            case "middleInitial" :
+                return ConnectionFactory.getConnection()
+                        .prepareStatement(
+                                "SELECT * FROM employees WHERE middleInitial = ?");
+            case "lastName" :
+                return ConnectionFactory.getConnection()
+                        .prepareStatement(
+                                "SELECT * FROM employees WHERE lastName = ?");
+            case "gender" :
+                return ConnectionFactory.getConnection()
+                        .prepareStatement(
+                                "SELECT * FROM employees WHERE gender = ?");
+            case "email" :
+                return ConnectionFactory.getConnection()
+                        .prepareStatement(
+                                "SELECT * FROM employees WHERE email = ?");
+            case "dateOfBirth" :
+                return ConnectionFactory.getConnection()
+                        .prepareStatement(
+                                "SELECT * FROM employees WHERE dateOfBirth = ?");
+            case "dateOfJoining" :
+                return ConnectionFactory.getConnection()
+                        .prepareStatement(
+                                "SELECT * FROM employees WHERE dateOfJoining = ?");
+            case "salary" :
+                return ConnectionFactory.getConnection()
+                        .prepareStatement(
+                                "SELECT * FROM employees WHERE salary = ?");
 
-
+        }
+        return null;
+    }
 }
