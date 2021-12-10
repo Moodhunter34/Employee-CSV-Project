@@ -13,7 +13,7 @@ public class StatementFactory {
         if(insertStatement == null){
             insertStatement = ConnectionFactory.getConnection()
                     .prepareStatement(
-                            "INSERT INTO employees (ID, prefix, firstName, middleInitial, lastName, Gender, email, dateOfBirth, dateOfJoining, Salary)" +
+                            "INSERT INTO employees (employeeID, prefix, firstName, middleInitial, lastName, Gender, email, dateOfBirth, dateOfJoining, Salary)" +
                                     " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
         }
         return insertStatement;
@@ -21,7 +21,7 @@ public class StatementFactory {
     public static PreparedStatement getDeleteStatement() throws SQLException, IOException {
         if(deleteStatement == null){
             deleteStatement = ConnectionFactory.getConnection()
-                    .prepareStatement("DELETE FROM employees WHERE employeeId = ?");
+                    .prepareStatement("DELETE FROM employees WHERE ? = ?");
         }
         return deleteStatement;
     }
