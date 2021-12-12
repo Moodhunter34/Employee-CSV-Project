@@ -19,11 +19,11 @@ public class View {
         boolean exit = false;
 
         while(!exit){
-            System.out.print("Type 1 to populate the database,\n" +
-                    "type 2 to select an employee by id,\n" +
-                    "type 3 to select an employee by lastname,\n" +
-                    "type 4 to delete an employee from the database,\n" +
-                    "type 5 to Exit.\n> ");
+            System.out.print("Type '1' to populate the database,\n" +
+                    "type '2' to select an employee by id,\n" +
+                    "type '3' to select an employee by lastname,\n" +
+                    "type '4' to delete an employee from the database,\n" +
+                    "type '5' to Exit.\n> ");
 
             Scanner scanner = new Scanner(System.in);
             int choice = scanner.nextInt();
@@ -33,7 +33,7 @@ public class View {
                 DataAccess.populateDatabase();
                 long timeEnd = System.nanoTime();
                 System.out.println("Database populated successfully.");
-                System.out.println("Action took "+(timeEnd-timeStart)+" nanoseconds\n");
+                System.out.println("Action took "+(timeEnd-timeStart)/1000000000f +" seconds\n");
             } else if (choice == 2){
                 System.out.print("Please input employee id\n> ");
                 String id = scanner.next();
@@ -42,10 +42,10 @@ public class View {
                 long timeEnd = System.nanoTime();
                 if(result == null){
                     System.out.println("Employee " + id + " does not exists.\n");
-                    System.out.println("Action took "+(timeEnd-timeStart)+" nanoseconds\n");
+                    System.out.println("Action took "+(timeEnd-timeStart)/1000000000f +" seconds\n");
                 }else {
                     System.out.println(result);
-                    System.out.println("Action took "+(timeEnd-timeStart)+" nanoseconds\n");
+                    System.out.println("Action took "+(timeEnd-timeStart)/1000000000f +" seconds\n");
                 }
             } else if (choice == 3) {
                 System.out.print("Please input employee's last name.\n> ");
@@ -56,7 +56,7 @@ public class View {
                 for (int i = 0; i < results.size(); i++) {
                     System.out.println(results.get(i));
                 }
-                System.out.println("Action took "+(timeEnd-timeStart)+" nanoseconds");
+                System.out.println("Action took "+(timeEnd-timeStart)/1000000000f +" seconds\n");
             } else if (choice == 4){
                 System.out.print("Please input the id of the employee that you want to delete\n> ");
                 int id = scanner.nextInt();
@@ -64,12 +64,12 @@ public class View {
                 if (DataAccess.deleteEmployee(id)) {
                     long timeEnd = System.nanoTime();
                     System.out.println("Employee deleted successfully.");
-                    System.out.println("Action took "+(timeEnd-timeStart)+" nanoseconds\n");
+                    System.out.println("Action took "+(timeEnd-timeStart)/1000000000f +" seconds\n");
                 }
                 else {
                     long timeEnd = System.nanoTime();
                     System.out.println("The employee with ID: "+ id +" was not found and hence not deleted.");
-                    System.out.println("Action took "+(timeEnd-timeStart)+" nanoseconds\n");
+                    System.out.println("Action took "+(timeEnd-timeStart)/1000000000f +" seconds\n");
                 }
 
             } else if (choice == 5){
