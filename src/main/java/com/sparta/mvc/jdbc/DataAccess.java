@@ -77,14 +77,14 @@ public class DataAccess {
     }
 
     public static void createNewEmployees(List<Employee> employees) throws SQLException, IOException {
-        long startTime = System.currentTimeMillis();
+        
         PreparedStatement statement = StatementFactory.getInsertStatement();
         for (Employee employee : employees) {
             createHelper(employee, statement);
             statement.addBatch();
         }
         statement.executeBatch();
-        long stopTime = System.currentTimeMillis();
+       
 
     }
 
