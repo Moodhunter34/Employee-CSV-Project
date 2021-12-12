@@ -1,5 +1,6 @@
 package com.sparta.mvc.model;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -10,7 +11,6 @@ public class StoreEmployees {
     public List<Employee> validEmployeeEntries = new ArrayList<>();
     public List<Employee> invalidEmployeeEntries = new ArrayList<>();
 
-    private final String FILE_NAME = "C:\\Users\\nikos\\Downloads\\EmployeeRecordsLarge.csv";
 
 
 
@@ -103,7 +103,10 @@ public class StoreEmployees {
     }
 
     public void csvToListOfEmployees() throws IOException, ParseException {
-        List<String[]> csvContent = CSVToEmployeeArrayList.readData(FILE_NAME);
+        Properties props = new Properties();
+        props.load(new FileReader("connection.properties"));
+        final String FILE_PATH = props.getProperty("filePath");
+        List<String[]> csvContent = CSVToEmployeeArrayList.readData(FILE_PATH);
         Set<Integer> lump = new HashSet<Integer>();
         for (int i = 0; i < csvContent.size(); i++) {
             String[] currentRow = csvContent.get(i);

@@ -1,5 +1,6 @@
 package com.sparta.mvc.model;
 
+
 import java.util.Date;
 
 public class Employee {
@@ -76,7 +77,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "com.sparta.mvc.model.Employee{" +
+        return "Employee{" +
                 "employeeId=" + employeeId +
                 ", Prefix=" + prefix +
                 ", firstName='" + firstName + '\'' +
@@ -84,7 +85,7 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", gender=" + gender +
                 ", email='" + email + '\'' +
-                ", dateOfBirt=" + dateOfBirth +
+                ", dateOfBirth=" + dateOfBirth +
                 ", dateOfJoining=" + dateOfJoining +
                 ", salary='" + salary + '\'' +
                 '}';

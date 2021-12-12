@@ -28,7 +28,7 @@ public class StatementFactory {
     public static PreparedStatement getDeleteStatement() throws SQLException, IOException {
         if(deleteStatement == null){
             deleteStatement = ConnectionFactory.getConnection()
-                    .prepareStatement("DELETE FROM employees WHERE ? = ?");
+                    .prepareStatement("DELETE FROM employees WHERE employeeID = ?");
         }
         return deleteStatement;
     }
