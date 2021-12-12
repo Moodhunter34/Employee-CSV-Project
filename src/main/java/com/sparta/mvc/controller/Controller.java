@@ -1,5 +1,15 @@
 package com.sparta.mvc.controller;
 
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
+
+import com.sparta.mvc.model.*;
+import com.sparta.mvc.view.View;
+
+import static com.sparta.mvc.jdbc.DataAccess.createNewEmployee;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -13,6 +23,7 @@ import com.sparta.mvc.model.*;
 
 import static com.sparta.mvc.jdbc.DataAccess.createNewEmployee;
 import static com.sparta.mvc.model.CSVToEmployeeArrayList.readData;
+
 
 public class Controller {
     public static void populateDatabase(){
@@ -35,8 +46,15 @@ public class Controller {
         }
     }
 
+
+    public static void main(String[] args) throws SQLException, IOException, ParseException {
+        View.displayMenu();
+        populateDatabase();
+    }
+}
     public static void main(String[] args) {
         populateDatabase();
     }
     }
+
 

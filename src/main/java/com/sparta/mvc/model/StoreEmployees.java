@@ -9,7 +9,9 @@ import java.util.*;
 public class StoreEmployees {
     public List<Employee> validEmployeeEntries = new ArrayList<>();
     public List<Employee> invalidEmployeeEntries = new ArrayList<>();
-    private final String FILE_NAME = "C:\\Users\\ariso\\Documents\\GitHub\\Employee-CSV-Project\\Employee-CSV-Project\\EmployeeRecords.csv";
+
+    private final String FILE_NAME = "C:\\Users\\nikos\\Downloads\\EmployeeRecordsLarge.csv";
+
 
 
     public static Employee createEmployee(String[] employeeRow) throws ParseException {
