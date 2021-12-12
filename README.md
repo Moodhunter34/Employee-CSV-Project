@@ -9,15 +9,15 @@ Employee CSV Project
 
 [Description](#Description)
 
-[How to run the application](How-to-run-the-application)
+[How to run the application](#How-to-run-the-application)
 
-[Improving Query Runtime](Improving-Query-Runtime)
+[Improving Query Runtime](#Improving-Query-Runtime)
 
 [Unit Tests](#Unit-Tests)
 
 [Built With](#Built-With)
 
-[Authors](Authors)
+[Authors](#Authors)
 
 ## Introduction
 
