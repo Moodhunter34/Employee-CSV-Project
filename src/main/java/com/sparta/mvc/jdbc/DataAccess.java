@@ -66,7 +66,7 @@ public class DataAccess {
             createNewEmployee(employee);
         }
     }
-
+    //Multithreading add employees
     public static void createNewEmployees(List<Employee> employees) throws SQLException, IOException {
         List<List<Employee>> subSets = employeesDivider(employees);
         for (List<Employee> subSet : subSets) {
@@ -84,6 +84,7 @@ public class DataAccess {
         }
     }
 
+    //Single thread add employee
     public static void createNewEmployee(Employee employee) throws SQLException, IOException {
         Date dob = new java.sql.Date(employee.getDateOfBirth().getTime());
         Date doj = new java.sql.Date(employee.getDateOfJoining().getTime());
@@ -100,7 +101,6 @@ public class DataAccess {
         statement.setDate(8, dob);
         statement.setDate(9, doj);
         statement.setInt(10, employee.getSalary());
-        //System.out.println(statement);
         statement.execute();
         statement.close();
     }
@@ -145,4 +145,5 @@ public class DataAccess {
         return results;
     }
 }
+
 

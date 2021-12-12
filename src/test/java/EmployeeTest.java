@@ -1,17 +1,24 @@
 import com.sparta.mvc.jdbc.ConnectionFactory;
 import com.sparta.mvc.jdbc.DataAccess;
+import com.sparta.mvc.jdbc.Request;
+import com.sparta.mvc.jdbc.StatementFactory;
 import com.sparta.mvc.model.Employee;
 import com.sparta.mvc.model.Validation;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.io.IOException;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import static com.sparta.mvc.jdbc.StatementFactory.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -76,7 +83,7 @@ class EmployeeTest {
             Employee employee = new Employee(26,"Mr","Anthony",'T',"Yeh",
                     'M',"antony.yeh@hotmail.com",dob, doj, 23000, rawData);
             DataAccess.createNewEmployee(employee);
-            List<Employee> person = DataAccess.readEmployeeID("26");
+            List<Employee> person = Request.readEmployeeID("26");
             assertEquals(person.get(0),employee);
             closeConnection();
         } catch (Exception e) {
@@ -84,17 +91,17 @@ class EmployeeTest {
         }
     }
 
-//    @Test
-//    public void deleteEmployee () {
-//        try {
-//            getConnection();
-//            List<Employee> person = Request.readEmployeeID("26");
-//            DataAccess.deleteEmployee(26);
-//            assertNull(person.get(0));
-//        }catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
+    @Test
+    public void deleteEmployee () {
+        try {
+            getConnection();
+            List<Employee> person = Request.readEmployeeID("26");
+            DataAccess.deleteEmployee(26);
+            assertNull(person.get(0));
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     @Test
     public void insert(){
@@ -121,4 +128,5 @@ class EmployeeTest {
 
     Does the file that I am reading exits?
      */
+
 }

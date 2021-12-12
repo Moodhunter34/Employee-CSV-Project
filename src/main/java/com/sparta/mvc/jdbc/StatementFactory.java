@@ -9,6 +9,7 @@ public class StatementFactory {
     private static PreparedStatement insertStatement = null;
     private static PreparedStatement deleteStatement = null;
 
+
     public static PreparedStatement dropTable() throws SQLException, IOException {
         return ConnectionFactory.getConnection()
                 .prepareStatement(
