@@ -16,26 +16,39 @@ import java.util.stream.IntStream;
 import com.sparta.mvc.jdbc.StatementFactory;
 import com.sparta.mvc.model.Employee;
 import com.sparta.mvc.model.StoreEmployees;
+import org.w3c.dom.ls.LSOutput;
 
 public class DataAccess {
     private static int limit = 6;
+    public static void populateDatabase(){
+        StoreEmployees se = new StoreEmployees();
+        try {
+            se.csvToListOfEmployees();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        for (int i = 0; i < se.validEmployeeEntries.size(); i++) {
+            try {
+                createNewEmployee(se.validEmployeeEntries.get(i));
+            } catch (SQLException e) {
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     private static List<Employee> format(ResultSet resultSet) throws SQLException, ParseException {
         List<Employee> results = new ArrayList<>();
         while (resultSet.next()) {
-            String[] result = {
-                    resultSet.getString(("employeeID")),
-                    resultSet.getString(("prefix")),
-                    resultSet.getString(("firstName")),
-                    resultSet.getString(("middleInitial")),
-                    resultSet.getString(("lastName")),
-                    resultSet.getString(("gender")),
-                    resultSet.getString(("email")),
-                    resultSet.getString(("dateOfBirth")),
-                    resultSet.getString(("dateOfJoining")),
-                    resultSet.getString(("salary"))
-            };
-            results.add(StoreEmployees.createEmployee(result));
+            java.util.Date dob = resultSet.getTimestamp("dateOfBirth");
+            java.util.Date doj = resultSet.getTimestamp("dateOfJoining");
+            Employee newEmployee = new Employee(resultSet.getInt(("employeeID")),resultSet.getString(("prefix")),
+                    resultSet.getString(("firstName")),resultSet.getString(("middleInitial")).charAt(0),resultSet.getString(("lastName")),
+                    resultSet.getString(("gender")).charAt(0),resultSet.getString(("email")),dob,doj,resultSet.getInt(("salary")),null);
+            results.add(newEmployee);
         }
         return results;
     }
@@ -66,7 +79,7 @@ public class DataAccess {
             createNewEmployee(employee);
         }
     }
-
+    //Multithreading add employees
     public static void createNewEmployees(List<Employee> employees) throws SQLException, IOException {
         List<List<Employee>> subSets = employeesDivider(employees);
         for (List<Employee> subSet : subSets) {
@@ -84,12 +97,11 @@ public class DataAccess {
         }
     }
 
+    //Single thread add employee
     public static void createNewEmployee(Employee employee) throws SQLException, IOException {
         Date dob = new java.sql.Date(employee.getDateOfBirth().getTime());
         Date doj = new java.sql.Date(employee.getDateOfJoining().getTime());
-
         PreparedStatement statement = StatementFactory.getInsertStatement();
-
         statement.setInt(1, employee.getEmployeeId());
         statement.setString(2, employee.getPrefix());
         statement.setString(3, employee.getFirstName());
@@ -100,16 +112,16 @@ public class DataAccess {
         statement.setDate(8, dob);
         statement.setDate(9, doj);
         statement.setInt(10, employee.getSalary());
-        //System.out.println(statement);
         statement.execute();
-        statement.close();
+        statement = null;
     }
 
-    public static void deleteEmployee(Integer employeeID) throws SQLException, IOException {
+    public static boolean deleteEmployee(Integer employeeID) throws SQLException, IOException {
         PreparedStatement statement = StatementFactory.getDeleteStatement();
         statement.setInt(1, employeeID);
-        int rowsAffected = statement.executeUpdate();
-        System.out.println("Rows affected: " + rowsAffected);
+        int rowsaffected = statement.executeUpdate();
+        if(rowsaffected>0) return true;
+        return false;
     }
 
     //Read table
@@ -121,11 +133,15 @@ public class DataAccess {
         return results;
     }
 
-    public static List<Employee> readEmployeeID(String value) throws SQLException, IOException, ParseException {
+    public static Employee readEmployeeID(String value) throws SQLException, IOException, ParseException {
         PreparedStatement statement = StatementFactory.getSelectStatement("employeeID");
         statement.setString(1, value);
         ResultSet resultSet = statement.executeQuery();
-        List<Employee> results = format(resultSet);
+        List<Employee> resultList = format(resultSet);
+        if(resultList.isEmpty()){
+            return null;
+        }
+        Employee results = resultList.get(0);
         return results;
     }
 
@@ -145,4 +161,5 @@ public class DataAccess {
         return results;
     }
 }
+
 
